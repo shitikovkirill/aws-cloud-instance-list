@@ -17,3 +17,9 @@ def get_instance_detail():
         headers={"X-aws-ec2-metadata-token": token}
     )
     return response.json()
+
+
+def get_instance_vpc(instance_id, region):
+    ec2 = boto3.resource('ec2', region_name=region)
+    instance = ec2.Instance(instance_id)
+    return instance.vpc.id
