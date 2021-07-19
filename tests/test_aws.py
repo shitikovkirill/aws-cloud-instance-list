@@ -1,3 +1,5 @@
+from src.aws import get_instance_detail
+
+
 def test_instance_detail():
-    pass
-    assert False
+    assert get_instance_detail()
