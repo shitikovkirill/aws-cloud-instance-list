@@ -1,6 +1,6 @@
 import re
 
-from src.aws import get_instance_detail, get_token, get_instance_vpc
+from src.aws import get_instance_detail, get_token, get_instance_vpc, get_instances_from_vpc
 
 
 def test_get_token():
@@ -18,4 +18,13 @@ def test_instance_detail():
 def test_get_instance_vpc():
     detail = get_instance_detail()
     vpc = get_instance_vpc(detail["instanceId"], detail["region"])
-    assert vpc
+    regex = re.compile(r'vpc-([a-zA-Z0-9]+)')
+    result = re.match(regex, vpc)
+    assert result.group(0)
+
+
+def test_get_instances_from_vpc():
+    detail = get_instance_detail()
+    vpc = get_instance_vpc(detail["instanceId"], detail["region"])
+    instances = get_instances_from_vpc(vpc, detail["region"])
+    assert instances == []
