@@ -1,6 +1,6 @@
 import re
 
-from src.aws import get_instance_detail, get_token, get_instance_vpc, get_instances_from_vpc
+from aws import get_instance_detail, get_token, get_instance_vpc, get_instances_from_vpc
 
 
 def test_get_token():

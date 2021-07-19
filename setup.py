@@ -8,7 +8,6 @@ setuptools.setup(
     version="0.0.1",
     description="Aws cloud instance list",
     author="sh.kiruh@gmail.com",
-    packages=setuptools.find_packages(where="src"),
     install_requires=required,
     extras_require={
         'dev': [
@@ -20,6 +19,6 @@ setuptools.setup(
         "Programming Language :: Python :: 3 :: Only",
     ],
     entry_points={
-        "console_scripts": ["get-instance-list=main:run"],
+        "console_scripts": ["cloud-instance-list=main:info"],
     },
 )
