@@ -18,4 +18,6 @@ def test_instance_detail():
 def test_get_instance_vpc():
     detail = get_instance_detail()
     vpc = get_instance_vpc(detail["instanceId"], detail["region"])
-    assert vpc
+    regex = re.compile(r'vpc-([a-zA-Z0-9]+)')
+    result = re.match(regex, vpc)
+    assert result.group(0)
