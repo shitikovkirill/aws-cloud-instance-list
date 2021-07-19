@@ -11,4 +11,5 @@ def test_get_token():
 
 
 def test_instance_detail():
-    assert ["instanceId", "region"] in get_instance_detail().keys()
+    assert "instanceId" in get_instance_detail().keys()
+    assert "region" in get_instance_detail().keys()
