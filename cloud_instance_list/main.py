@@ -1,7 +1,7 @@
 import click
 from tabulate import tabulate
 
-from aws import get_instance_detail, get_instance_vpc, get_instances_from_vpc
+from .aws import get_instance_detail, get_instance_vpc, get_instances_from_vpc
 
 
 @click.command()
