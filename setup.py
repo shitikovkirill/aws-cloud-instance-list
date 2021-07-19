@@ -1,16 +1,13 @@
 import setuptools
 from distutils.core import setup
 
-with open('requirements.txt') as f:
-    required = f.read().splitlines()
-
 setup(
     name="aws-cloud-instance-list",
-    version="0.0.1",
+    version="0.0.2",
     description="Aws cloud instance list",
     author="Kirill Shitikov",
     author_email="sh.kiruh@gmail.com",
-    packages=setuptools.find_packages(where="cloud_instance_list"),
+    packages=["cloud_instance_list"],
     install_requires=[
         "click==8.0.1",
         "boto3==1.18.1",
