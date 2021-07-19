@@ -5,7 +5,7 @@ import requests
 def get_token():
     token = requests.put(
         "http://169.254.169.254/latest/api/token",
-        headers={"X-aws-ec2-meconds": "21600"}
+        headers={"X-aws-ec2-metadata-token-ttl-seconds": "21600"}
     )
     return token
 
