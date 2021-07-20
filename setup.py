@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name="aws-cloud-instance-list",
-    version="0.0.2",
+    version="0.0.3",
     description="Aws cloud instance list",
     author="Kirill Shitikov",
     author_email="sh.kiruh@gmail.com",
