@@ -1,5 +1,11 @@
 from distutils.core import setup
 
+# read the contents of your README file
+from os import path
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name="aws-cloud-instance-list",
     version="0.0.3",
@@ -27,4 +33,6 @@ setup(
     },
     url='https://github.com/shitikovkirill/aws-cloud-instance-list',
     download_url='https://github.com/shitikovkirill/aws-cloud-instance-list/archive/refs/heads/main.zip',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
 )
