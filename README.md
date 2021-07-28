@@ -15,21 +15,7 @@ To bastion instance need add managed role `AmazonEC2ReadOnlyAccess`
 For using `mssh` need add to instance policy
 
 ```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Condition": {
-                "StringEquals": {
-                    "aws:ResourceTag/<tag-key>": "<tag-name>"
-                }
-            },
-            "Action": "ec2-instance-connect:SendSSHPublicKey",
-            "Resource": "arn:aws:ec2:<region>:<profile_id>:instance/*",
-            "Effect": "Allow"
-        }
-    ]
-}
+{ "Version": "2012-10-17", "Statement": [{"Condition": {"StringEquals": {"aws:ResourceTag/<tag-key>": "<tag-name>"}}, "Action": "ec2-instance-connect:SendSSHPublicKey", "Resource": "arn:aws:ec2:<region>:<profile_id>:instance/*", "Effect": "Allow"}]}
 ```
 
 ## Update
@@ -42,4 +28,9 @@ pip3 install aws-cloud-instance-list --upgrade
 ```
 python setup.py register -r pypi
 python setup.py sdist upload -r pypi
+```
+
+#### Check readme
+```
+python -m readme_renderer README.md -o /tmp/README.html
 ```
